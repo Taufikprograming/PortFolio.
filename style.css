@@ -311,7 +311,9 @@ a.social {
   transform: scale(1.2);
   background-image: linear-gradient(to right, #0d6efd, #6610f2);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .social-wrapper {
@@ -332,7 +334,9 @@ a.social {
   transform: scale(1.2);
   background-image: linear-gradient(to right, #0d6efd, #6610f2);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .kontak .form-control {
