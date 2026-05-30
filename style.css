@@ -1,10 +1,96 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --nav-bg: rgba(17, 17, 17, 0.85);
+  --nav-shadow: rgba(0, 0, 0, 0.5);
+  --section-bg: #1a1a1a;
+  --card-bg: #1e1e1e;
+  --card-hover: #2a2a2a;
+  --footer-bg: #0a0a0a;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --input-bg: #2a2a2a;
+}
+
+body.light-theme {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-shadow: rgba(0, 0, 0, 0.1);
+  --section-bg: #ffffff;
+  --card-bg: #ffffff;
+  --card-hover: #f1f3f5;
+  --footer-bg: #e9ecef;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --input-bg: #ffffff;
+}
+
+/* Menjaga warna navbar tetap terlihat di Light Mode */
+body.light-theme .navbar-brand,
+body.light-theme .nav-link,
+body.light-theme #theme-toggle {
+  color: var(--text-color) !important;
+}
+body.light-theme .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.navbar {
+  background: var(--nav-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px var(--nav-shadow) !important;
+  transition: background-color 0.4s ease;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .banner {
-  background: url("https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2018/11/dark-wallpapers.jpg")
-    no-repeat center center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("Asset/WhatsApp\ Image\ 2026-05-03\ at\ 12.12.03.jpeg") no-repeat center top;
   background-size: cover;
   padding-top: 20%;
   padding-bottom: 20%;
   color: #fff;
+}
+
+.banner h3 {
+  margin-bottom: 30px;
+}
+
+.banner h4 {
+  margin-bottom: 10px;
 }
 
 .lingkaran {
@@ -13,13 +99,18 @@
   width: 150px;
   margin: auto;
   height: 150px;
-  color: #fff;
-  background-color: black;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.4s ease;
 }
 
 .lingkaran i {
   position: relative;
   top: 35px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .crop-img {
@@ -28,7 +119,7 @@
 
 .tim img {
   width: 250px;
-  border: 10px solid #cccccc;
+  border: 10px solid var(--border-color);
 }
 a.social {
   display: inline-block;
@@ -40,15 +131,267 @@ a.social {
   line-height: 40px;
 }
 
+.tentang-section {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+}
+
+.about-img {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
 .client img {
   height: auto;
   max-height: 50px;
 }
 
 .kontak {
-  background: url(https://musrenbangpoldajatim2022.com/img/background.jpg) no-repeat center center;
-  background-size: cover;
-  padding-bottom: 20%;
-  padding-top: 20%;
-  color: #fff;
+  background-color: var(--section-bg);
+  color: var(--text-color);
+}
+
+.btn-gradient {
+  background-image: linear-gradient(to right, #0d6efd, #6610f2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.banner .btn-gradient {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 16, 242, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(102, 16, 242, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 16, 242, 0);
+  }
+}
+
+.btn-gradient:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.layanan .col-md-4,
+.card {
+  transition: all 0.4s ease;
+  border-radius: 10px;
+}
+
+.layanan .col-md-4 {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.layanan .col-md-4:hover,
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-hover);
+}
+
+.layanan .col-md-4:hover i {
+  transform: scale(1.1);
+  color: #0d6efd;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-section {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+}
+
+.portfolio-container .card {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--card-hover);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.portfolio-container .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-container .card .card-title {
+  color: var(--text-color);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-container .card:hover .portfolio-img {
+  transform: scale(1.1);
+}
+
+.portfolio-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.portfolio-buttons .btn-gradient {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.tech-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.tech-container div {
+  animation: float-tech 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+/* Memberikan delay berbeda agar animasi naik-turun terlihat seperti gelombang */
+.tech-container div:nth-child(1) { animation-delay: 0s; }
+.tech-container div:nth-child(2) { animation-delay: 0.2s; }
+.tech-container div:nth-child(3) { animation-delay: 0.4s; }
+.tech-container div:nth-child(4) { animation-delay: 0.6s; }
+.tech-container div:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes float-tech {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.tech-container i {
+  font-size: 3rem;
+  transition: all 0.3s ease;
+}
+
+.tech-container div:hover i {
+  transform: scale(1.2);
+  background-image: linear-gradient(to right, #0d6efd, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  background-image: linear-gradient(to right, #0d6efd, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kontak .form-control {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.kontak .form-control::placeholder {
+  color: #a1a1a1;
+}
+
+.kontak .form-control:focus {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  outline: none;
+  box-shadow: 0 0 0 2px #0d6efd;
+}
+
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Penyempurnaan Responsif untuk Perangkat Mobile */
+@media (max-width: 768px) {
+  .display-1 {
+    font-size: 2.5rem;
+  }
+  .display-3 {
+    font-size: 2rem;
+  }
+  .display-6 {
+    font-size: 1.5rem;
+  }
+  .tech-container,
+  .social-wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }

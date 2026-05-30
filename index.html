@@ -1,61 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
+    <title>Taufik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!--navigsi-->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Portfolio.</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse text-right"
-          id="navbarSupportedContent"
-        >
+        <a class="navbar-brand" href="#">Taufik.</a>
+        <div class="d-flex align-items-center order-lg-last">
+          <button id="lang-toggle" class="nav-link p-0 me-3" style="background: none; border: none; cursor: pointer; font-weight: 600">EN</button>
+          <button id="theme-toggle" class="nav-link p-0 me-3" style="background: none; border: none; cursor: pointer">
+            <i class="fas fa-sun fa-lg"></i>
+          </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#layanan">Layanan</a>
+              <a class="nav-link" href="#tentang" data-i18n="nav_tentang">Tentang Saya</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#portofolio">Portofolio</a>
+              <a class="nav-link" href="#layanan" data-i18n="nav_layanan">Layanan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#tentang">Tentang</a>
+              <a class="nav-link" href="#tech-stack" data-i18n="nav_tools">Alat & Keterampilan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#staff">Staff</a>
+              <a class="nav-link" href="#portofolio" data-i18n="nav_portofolio">Portofolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#kontak">Kontak Kami</a>
+              <a class="nav-link" href="#kontak" data-i18n="nav_kontak">Hubungi Saya</a>
             </li>
           </ul>
         </div>
@@ -64,191 +51,150 @@
     <!--banner-->
     <div class="container-fluid banner">
       <div class="container text-center">
-        <h4 class="display-6">Welcome to our Website</h4>
-        <h3 class="display-1">Hai! Halo!</h3>
-        <a href="#layanan">
-          <button type="button" class="btn btn-danger btn-lg">
-            Cek Layanan
-          </button>
+        <h4 class="display-6" data-i18n="banner_hello">Halo, Saya Taufik</h4>
+        <h3 class="display-1 typing-text"></h3>
+        <a href="#portofolio">
+          <button type="button" class="btn btn-lg btn-gradient" data-i18n="banner_btn">Lihat Karya Saya</button>
         </a>
+      </div>
+    </div>
+    <!--tentang-->
+    <div class="container-fluid pt-5 pb-5 tentang-section">
+      <div class="container">
+        <h2 class="display-3 text-center" id="tentang" data-i18n="tentang_title">Tentang Saya</h2>
+        <div class="row pt-5 align-items-center" data-aos="fade-up">
+          <div class="col-md-5 order-md-2 mb-4 mb-md-0 text-center">
+            <img src="Asset/Foto tentang.jpeg" alt="Foto Taufik" class="img-fluid about-img" />
+          </div>
+          <div class="col-md-7 order-md-1">
+            <p class="about-text" data-i18n="tentang_desc">
+              Halo! Saya Taufik, seorang mahasiswa Teknik Informatika di STMIK IKMI Cirebon yang bersemangat dalam Full-Stack Web Development. Saya gemar mengeksplorasi gaya desain UI/UX modern seperti Glassmorphism dan Neobrutalism untuk
+              menciptakan antarmuka web yang interaktif menggunakan HTML, CSS, dan JavaScript. Selain ekosistem web, saya juga aktif menggunakan Python untuk proyek otomatisasi. Saya selalu antusias untuk belajar dan berkolaborasi dalam
+              menciptakan solusi digital yang kreatif.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <!--layanan-->
     <div class="container-fluid layanan pt-5 pb-5">
       <div class="container text-center">
-        <h2 class="display-3" id="layanan">Layanan</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid,
-          deserunt.
-        </p>
+        <h2 class="display-3" id="layanan" data-i18n="layanan_title">Layanan</h2>
+        <p data-i18n="layanan_desc">Saya menawarkan solusi pengembangan web yang berfokus pada tampilan visual yang menarik, performa tinggi, dan pengalaman pengguna yang interaktif.</p>
         <div class="row pt-4">
-          <div class="col-md-4">
-            <span class="lingkaran"><i class="fas fa-code fa-5x"></i></span>
-            <h3 class="mt-3">Programming</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, explicabo.
-            </p>
+          <div class="col-md-4" data-aos="fade-up">
+            <span class="lingkaran"><i class="fa-solid fa-code fa-5x"></i></span>
+            <h3 class="mt-3" data-i18n="layanan_webdev">Web Development</h3>
+            <p data-i18n="layanan_webdev_desc">Membangun website responsif dan modern menggunakan HTML, CSS, dan JavaScript murni dengan struktur kode yang bersih (clean code).</p>
           </div>
-          <div class="col-md-4">
-            <span class="lingkaran"><i class="fas fa-palette fa-5x"></i></i></span>
-            <h3 class="mt-3">Graphic Design</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, explicabo.
-            </p>
+          <div class="col-md-4" data-aos="fade-up">
+            <span class="lingkaran"><i class="fa-solid fa-rocket fa-5x"></i></span>
+            <h3 class="mt-3" data-i18n="layanan_webanim">Web Animation</h3>
+            <p data-i18n="layanan_webanim_desc">Menghidupkan elemen website melalui animasi CSS dan manipulasi DOM JavaScript untuk interaksi pengguna yang dinamis.</p>
           </div>
-          <div class="col-md-4">
-            <span class="lingkaran"><i class="fas fa-network-wired fa-5x"></i></span>
-            <h3 class="mt-3">Network</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, explicabo.
-            </p>
+          <div class="col-md-4" data-aos="fade-up">
+            <span class="lingkaran"><i class="fa-solid fa-wand-magic-sparkles fa-5x"></i></span>
+            <h3 class="mt-3" data-i18n="layanan_uiux">UI/UX Implementation</h3>
+            <p data-i18n="layanan_uiux_desc">Menerjemahkan desain visual menjadi antarmuka web yang interaktif, pixel-perfect, dan ramah perangkat seluler.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tech stack -->
+    <div class="container-fluid pt-5 pb-5">
+      <div class="container text-center">
+        <h2 class="display-3" id="tech-stack" data-i18n="tools_title">Alat & Keterampilan</h2>
+        <div class="tech-container pt-4">
+          <div>
+            <i class="fa-brands fa-html5"></i>
+            <p>HTML5</p>
+          </div>
+          <div>
+            <i class="fa-brands fa-css3-alt"></i>
+            <p>CSS3</p>
+          </div>
+          <div>
+            <i class="fa-brands fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div>
+            <i class="fa-brands fa-python"></i>
+            <p>Python</p>
+          </div>
+          <div>
+            <i class="fa-brands fa-github"></i>
+            <p>GitHub</p>
           </div>
         </div>
       </div>
     </div>
     <!--portofolio-->
-    <div class="container-fluid pt-5 pb-5 bd-light">
+    <div class="container-fluid pt-5 pb-5 portfolio-section">
       <div class="container text-center">
-        <h2 class="display-3" id="portofolio">Portofolio</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias earum amet voluptas accusantium error, aut officiis? Iste explicabo sapiente minima.</p>
-        <div class="row pt-4 gx-4 gy-4">
-          <div class="col-md-4">
-            <div class="card crop-img">
-              <img src="https://www.integraindonesia.co.id/wp-content/uploads/2021/10/memilih-konsultan-it-terbaik.jpg" class="card-img-top" width="200" height="200">
-              <div class="card-body">
-                <h5 class="card-title">Lorem, ipsum.</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit eveniet, labore odit facere quibusdam.</p>
+        <h2 class="display-3" id="portofolio" data-i18n="portofolio_title">Portofolio</h2>
+        <p data-i18n="portofolio_desc">Berikut adalah beberapa karya dan eksperimen web development yang telah saya bangun, berfokus pada interaktivitas, performa, dan desain responsif.</p>
+        <div class="portfolio-container pt-4">
+          <div class="card crop-img" data-aos="fade-up">
+            <div id="portfolioCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="Asset/Animasi 1/1.png" class="d-block w-100 portfolio-img" alt="Screenshot 1" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Asset/Animasi 1/2.png" class="d-block w-100 portfolio-img" alt="Screenshot 2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Asset/Animasi 1/3.png" class="d-block w-100 portfolio-img" alt="Screenshot 3" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Asset/Animasi 1/4.png" class="d-block w-100 portfolio-img" alt="Screenshot 4" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Asset/Animasi 1/5.png" class="d-block w-100 portfolio-img" alt="Screenshot 5" />
+                </div>
+                <div class="carousel-item">
+                  <img src="Asset/Animasi 1/6.png" class="d-block w-100 portfolio-img" alt="Screenshot 6" />
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="porto_1_title">Interactive Heart Particles</h5>
+              <p class="card-text" data-i18n="porto_1_desc">Eksperimen interaktif yang menggabungkan manipulasi DOM untuk galeri foto berbentuk hati dan animasi partikel CSS untuk menciptakan visualisasi cinta yang dinamis dan puitis.</p>
+              <div class="portfolio-buttons">
+                <a href="https://taufikprograming.github.io/Animasi-1/" target="_blank" class="btn btn-gradient" data-i18n="btn_live">Lihat Live Demo</a>
+                <a href="https://github.com/Taufikprograming/Animasi-1" target="_blank" class="btn btn-gradient" data-i18n="btn_code">Lihat Kode</a>
               </div>
             </div>
           </div>
-
-          <div class="col-md-4">
-            <div class="card crop-img">
-              <img src="https://glints.com/id/lowongan/wp-content/uploads/2020/04/shutterstock_1508330006.jpg" width="354" height="200">
-              <div class="card-body">
-                <h5 class="card-title">Lorem, ipsum.</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit eveniet, labore odit facere quibusdam.</p>
+          <div class="card crop-img" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://www.integraindonesia.co.id/wp-content/uploads/2021/10/memilih-konsultan-it-terbaik.jpg" class="card-img-top" width="200" height="200" />
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="porto_2_title">Web Animasi Interaktif (Animasi-1)</h5>
+              <p class="card-text" data-i18n="porto_2_desc">Eksperimen interaksi web yang menggabungkan manipulasi DOM JavaScript dan keyframe CSS untuk menciptakan transisi halus dan pengalaman pengguna yang dinamis.</p>
+              <div class="portfolio-buttons">
+                <a href="https://taufikprograming.github.io/Animasi-1/" target="_blank" class="btn btn-gradient" data-i18n="btn_live">Lihat Live Demo</a>
+                <a href="https://github.com/Taufikprograming/Animasi-1" target="_blank" class="btn btn-gradient" data-i18n="btn_code">Lihat Kode</a>
               </div>
             </div>
           </div>
-
-          <div class="col-md-4">
-            <div class="card crop-img">
-              <img src="https://1.bp.blogspot.com/-ImRcCotCYBU/Xebh5HvtZHI/AAAAAAAAAo0/uMVcRpJ6XzkR2sjZwqPGOYWvo66UePu4ACLcBGAsYHQ/s1600/maxresdefault.jpg">
-              <div class="card-body">
-                <h5 class="card-title">Lorem, ipsum.</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit eveniet, labore odit facere quibusdam.</p>
+          <div class="card crop-img" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://www.integraindonesia.co.id/wp-content/uploads/2021/10/memilih-konsultan-it-terbaik.jpg" class="card-img-top" width="200" height="200" />
+            <div class="card-body">
+              <h5 class="card-title" data-i18n="porto_2_title">Web Animasi Interaktif (Animasi-1)</h5>
+              <p class="card-text" data-i18n="porto_2_desc">Eksperimen interaksi web yang menggabungkan manipulasi DOM JavaScript dan keyframe CSS untuk menciptakan transisi halus dan pengalaman pengguna yang dinamis.</p>
+              <div class="portfolio-buttons">
+                <a href="https://taufikprograming.github.io/Animasi-1/" target="_blank" class="btn btn-gradient" data-i18n="btn_live">Lihat Live Demo</a>
+                <a href="https://github.com/Taufikprograming/Animasi-1" target="_blank" class="btn btn-gradient" data-i18n="btn_code">Lihat Kode</a>
               </div>
             </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card crop-img">
-              <img src="https://blog.gamatechno.com/wp-content/uploads/2018/09/software-developer.jpg">
-              <div class="card-body">
-                <h5 class="card-title">Lorem, ipsum.</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit eveniet, labore odit facere quibusdam.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card crop-img">
-              <img src="https://blog.gamatechno.com/wp-content/uploads/2018/09/IT-Support.jpg">
-              <div class="card-body">
-                <h5 class="card-title">Lorem, ipsum.</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit eveniet, labore odit facere quibusdam.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card crop-img">
-              <img src="https://phintraco.com/wp-content/uploads/2017/05/networksecurity-2.jpg">
-              <div class="card-body">
-                <h5 class="card-title">Lorem, ipsum.</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto reprehenderit eveniet, labore odit facere quibusdam.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--tentang-->
-    <div class="container-fluid pt-5 pb-5">
-      <div class="container">
-        <h2 class="display-3 text-center" id="tentang">Tentang</h2>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, quia.</p>
-        <div class="clearfix pt-5"><img src="https://www.shutterstock.com/image-photo/about-us-details-contact-data-260nw-377373607.jpg" class="col-md-6 float-md-end mb-3 crop-img" width="300" height="300"/>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita laudantium molestiae, dignissimos culpa autem?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita laudantium molestiae, dignissimos culpa autem?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita laudantium molestiae, dignissimos culpa autem?</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus fuga velit maxime illum nobis, fugiat officiis ex dolorum. Consectetur, quaerat?</p>
-        </div>
-      </div>
-    </div>
-    <!-- tim -->
-    <div class="container-fluid pt-5 pb-5 bg-light">
-      <div class="container text-center">
-        <h2 class="display-3" id="staff">Tim Kami</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta labore temporibus voluptates ipsa, libero soluta laboriosam saepe mollitia accusamus reiciendis?</p>
-        <div class="row pt-4 gx-4 gy-4">
-          <div class="col-md-4 text-center tim">
-            <img src="data:image/jpeg;base64,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" width="300" height="300" class="rounded-circle mb-3"/>
-            <h4>John doe</h4> 
-            <p>web depelovert</p>
-            <p>
-              <a href="" class="social"><i class="fab fa-twitter"></i></a>
-              <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </p>
-          </div>
-
-          <div class="col-md-4 text-center tim">
-            <img src="https://awsimages.detik.net.id/community/media/visual/2019/09/25/2af8e9b6-031b-4ec0-93f5-d044a82650f9.jpeg?w=750&q=90" width="300" height="300" class="rounded-circle mb-3"/>
-            <h4>Jonatan</h4> 
-            <p>Network</p>
-            <p>
-              <a href="" class="social"><i class="fab fa-twitter"></i></a>
-              <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </p>
-          </div>
-
-          <div class="col-md-4 text-center tim">
-            <img src=https://img.lovepik.com/photo/20211203/medium/lovepik-business-men-in-suits-picture_501462426.jpg width="300" height="300" class="rounded-circle mb-3"/>
-            <h4>Paulin</h4> 
-            <p>Data Science</p>
-            <p>
-              <a href="" class="social"><i class="fab fa-twitter"></i></a>
-              <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- client -->
-    <div class="container-fluid client pt-5 pb-5">
-      <div class="container text-center">
-        <div class="row pt-4 gx-4 gy-4">
-          <div class="col">
-            <img src="https://cdn.icon-icons.com/icons2/2845/PNG/512/microsoft_logo_icon_181372.png"/>
-          </div>
-          <div class="col">
-            <img src="https://w7.pngwing.com/pngs/333/266/png-transparent-facebook-computer-icons-privato-salon-spa-fever-logo-black-and-white-symbol-thumbnail.png"/>
-          </div>
-          <div class="col">
-            <img src="https://cdn.icon-icons.com/icons2/933/PNG/512/linkedin-logo_icon-icons.com_72681.png"/>
-          </div>
-          <div class="col">
-            <img src="https://w7.pngwing.com/pngs/49/431/png-transparent-computer-icons-google-logo-online-advertising-google-angle-search-engine-optimization-text.png"/>
-          </div>
-          <div class="col">
-            <img src="https://w7.pngwing.com/pngs/379/202/png-transparent-ibm-computer-software-encapsulated-postscript-logo-ibm-angle-text-rectangle.png"/>
           </div>
         </div>
       </div>
@@ -256,30 +202,35 @@
     <!-- kontak -->
     <div class="container-fluid pt-5 pb-5 kontak">
       <div class="container">
-        <h2 class="display-3 text-center" id="kontak">Kontak Kami</h2>
-        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dignissimos!</p>
-        <div class="row pb-3">
-          <div class="col-md-6">
-            <input class="form-control form-control-lg mb-3" type="text" placeholder="Nama">
-            <input class="form-control form-control-lg mb-3" type="text" placeholder="Email">
-            <input class="form-control form-control-lg" type="text" placeholder="No. phone">
+        <h2 class="display-3 text-center" id="kontak" data-i18n="kontak_title">Hubungi Saya</h2>
+        <p class="text-center" data-i18n="kontak_desc">Punya ide proyek menarik atau ingin berkolaborasi? Jangan ragu untuk meninggalkan pesan di bawah ini.</p>
+        <form action="https://formspree.io/f/xlgvvowj" method="POST">
+          <div class="row pb-3">
+            <div class="col-md-6">
+              <input class="form-control form-control-lg mb-3" type="text" name="nama" placeholder="Nama" data-i18n-placeholder="placeholder_nama" required />
+              <input class="form-control form-control-lg mb-3" type="email" name="email" placeholder="Email" required />
+              <input class="form-control form-control-lg mb-3" type="text" name="no_hp" placeholder="No. phone" />
+            </div>
+            <div class="col-md-6">
+              <textarea class="form-control form-control-lg" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." data-i18n-placeholder="placeholder_pesan" required></textarea>
+            </div>
           </div>
-          <div class="col-md-6">
-            <textarea class="form-control form-control-lg" rows="5"></textarea>
+          <div class="col-md-3 mx-auto text-center mt-3">
+            <button type="submit" class="btn btn-gradient btn-lg" data-i18n="kontak_btn">Kirim Pesan</button>
           </div>
-        </div>
-        <div class="col-md-3 mx-auto text-center">
-          <button type="button" class="btn btn-danger btn-lg">Krim Pesan</button>
+        </form>
+        <div class="social-wrapper pt-5 mt-4 border-top border-secondary">
+          <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a id="smart-email" class="social-icon" style="cursor: pointer"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/Taufikprograming" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
     </div>
-    <div class="container text-center pt-5 pb-5">
-      All Rights Reserved &copy; 2023
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
+    <footer class="footer" data-i18n="footer_text">&copy; 2026 Taufik | Front-End Developer. All Rights Reserved. 🚀</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
